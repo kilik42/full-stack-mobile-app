@@ -4,8 +4,8 @@ import {ENV} from "./env.js";
 import * as schema  from "../db/schema.js";
 
 
-const client = neon(ENV.DATABASE_URL);
-export const db = drizzle(client, {schema: {favorites: favoritesTable}});
+const sql = neon(ENV.DATABASE_URL);
+export const db = drizzle(sql, {schema });
 
 // export const db = drizzle(client);
 // export const db = drizzle(client, {schema: {favorites: favoritesTable}});
